@@ -5,7 +5,7 @@ Hyperdrive v2.0 is a next-generation autonomous trading and intelligence framewo
 ## The Intelligence Stack
 
 ### 1. Predictive Ontology (Palantir)
-Maps relationships between whales, protocols, and capital flows across Base, Hyperliquid, and ApeChain. It identifies "clusters" of activity to predict regime shifts before they hit the price.
+Maps relationships between whales, protocols, and capital flows across Base, Hyperliquid, ApeChain, and **BNB Chain**. It identifies "clusters" of activity to predict regime shifts before they hit the price.
 
 ### 2. Statistical Ensemble (Holly AI)
 Runs 70+ concurrent sub-strategies (momentum, mean reversion, breakout). Execution only fires when the "Holly Score" exceeds a 95% confidence threshold.
@@ -27,4 +27,4 @@ Hyperdrive v2.0 is powered by **Hermes OS**, providing persistent memory, automa
 
 ## Deployment
 - **Identity**: `sparrow-agent.eth`
-- **Network**: Base (Primary), Hyperliquid, ApeChain, Ethereum.
+- **Network**: Base (Primary), Hyperliquid, ApeChain, Ethereum, **BNB Chain**.
