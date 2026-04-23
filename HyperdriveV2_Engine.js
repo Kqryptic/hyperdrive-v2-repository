@@ -5,13 +5,15 @@
  * modules to generate high-conviction trading signals.
  */
 
+import BNBChainEngine from './bnb_chain_engine.js';
+
 const HyperdriveEngine = {
-    version: "2.0.0",
-    modules: ["Ontology", "Holly", "Darwin", "x402", "Chainlink"],
+    version: "2.1.0",
+    modules: ["Ontology", "Holly", "Darwin", "x402", "Chainlink", "BNBChain"],
 
     // Run the 15-minute intelligence loop
     runLoop: async () => {
-        console.log("🚀 Starting Hyperdrive v2.0 Intelligence Loop...");
+        console.log("🚀 Starting Hyperdrive v2.1 Intelligence Loop...");
         
         // 1. Refresh Predictive Ontology (Palantir)
         const regime = await this.refreshOntology();
@@ -27,7 +29,11 @@ const HyperdriveEngine = {
         
         // 5. Execute via Chainlink CCIP / Intent Settlement
         if (signals.highConviction) {
-            await this.execute(signals.best);
+            if (signals.chain === "bnb") {
+                await BNBChainEngine.execute(signals.best);
+            } else {
+                await this.execute(signals.best);
+            }
         }
     },
 
@@ -42,7 +48,7 @@ const HyperdriveEngine = {
 
     evaluateHolly: async (regime, data) => {
         // Statistical ensemble evaluation
-        return { highConviction: true, best: "BNKR/USDC" };
+        return { highConviction: true, best: "BNB/USDC", chain: "bnb" };
     },
 
     evolve: async (performance) => {
