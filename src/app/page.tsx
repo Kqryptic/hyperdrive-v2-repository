@@ -11,7 +11,7 @@ export default function Home() {
           </div>
           <div className="text-right text-xs opacity-40">
             <p>STATUS: OPERATIONAL</p>
-            <p>ENCRYPTION: PQC-WOTS+</p>
+            <p>DKG_NODE: CONNECTED [v9-BETA]</p>
           </div>
         </header>
 
@@ -32,11 +32,15 @@ export default function Home() {
 
             <div className="p-6 border border-[#00ff41]/20 bg-[#00ff41]/5 hover:bg-[#00ff41]/10 transition-all">
               <h2 className="text-2xl font-bold mb-4 flex items-center">
-                <span className="mr-2 opacity-50">02/</span> Q-ARB ENGINE
+                <span className="mr-2 opacity-50">02/</span> DECENTRALIZED KNOWLEDGE GRAPH
               </h2>
               <p className="text-sm opacity-80 leading-relaxed">
-                Quantum-inspired annealing for cross-chain liquidity routing. Identifying global maxima across 15+ chains in real-time.
+                Integrated with OriginTrail DKG v9. Hyperdrive findings are now anchored as cryptographically verifiable Knowledge Assets. Shared memory for the multi-agent economy.
               </p>
+              <div className="mt-4 flex gap-4 text-[10px] opacity-40">
+                <span>[RDF_TRIPLES]</span>
+                <span>[SPARQL_READY]</span>
+              </div>
             </div>
           </div>
 
@@ -45,7 +49,7 @@ export default function Home() {
               <h3 className="text-xs font-bold mb-6 opacity-50 uppercase tracking-widest">Live Intelligence Feed</h3>
               <div className="space-y-4 text-[10px] opacity-70">
                 <p className="text-white/50">[14:22:01] Scanning Base liquidity pools...</p>
-                <p>[14:22:05] Q-Arb path found: ETH -> USDC -> BNKR (+0.42%)</p>
+                <p className="text-[#00ff41]">[14:22:05] DKG: Publishing Knowledge Asset #882...</p>
                 <p className="text-white/50">[14:22:10] Verifying Q-Shield state...</p>
                 <p className="text-yellow-500">[14:22:15] Anomaly detected: High volatility in SOL/USDC</p>
                 <p>[14:22:20] Re-routing via Hyperliquid...</p>
@@ -58,7 +62,7 @@ export default function Home() {
         </section>
 
         <footer className="pt-8 border-t border-[#00ff41]/30 flex justify-between items-center text-[10px] opacity-40">
-          <p>© 2026 HYPERDRIVE SYSTEMS | POWERED BY BANKR</p>
+          <p>© 2026 HYPERDRIVE SYSTEMS | POWERED BY BANKR & ORIGINTRAIL</p>
           <div className="flex gap-6">
             <a href="#" className="hover:opacity-100 transition-opacity">DOCS</a>
             <a href="#" className="hover:opacity-100 transition-opacity">GITHUB</a>
