@@ -1,10 +1,7 @@
 import { paymentProxy, x402ResourceServer } from "@x402/next";
-import { HTTPFacilitatorClient } from "@x402/core/server";
-import { ExactEvmScheme } from "@x402/evm/exact/server";
 
-const facilitator = new HTTPFacilitatorClient({ url: "https://x402.org/facilitator" });
-const server = new x402ResourceServer(facilitator)
-  .register("eip155:8453", new ExactEvmScheme());
+// Note: In serverless environments, we use the unified @x402/next entry points
+// to avoid module resolution issues with sub-paths.
 
 export const middleware = paymentProxy(
   {
@@ -26,8 +23,7 @@ export const middleware = paymentProxy(
       },
       description: "Deep on-chain risk assessment",
     },
-  },
-  server
+  }
 );
 
 export const config = {
