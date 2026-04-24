@@ -18,8 +18,7 @@
     "tailwind-merge": "^2.2.1",
     "@x402/next": "latest",
     "@x402/core": "latest",
-    "@x402/evm": "latest",
-    "@x402/extensions": "latest"
+    "@x402/evm": "latest"
   },
   "devDependencies": {
     "typescript": "^5",
