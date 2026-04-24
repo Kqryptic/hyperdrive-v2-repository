@@ -6,7 +6,9 @@ export default function Home() {
     active_agents: 300,
     venues: {
       avantis: { btc: "$78,344.34", eth: "$2,327.6", sol: "$86.44" },
-      hyperliquid: { btc: "$78,271", eth: "$2,325.3", sol: "$86.36" }
+      hyperliquid: { btc: "$78,271", eth: "$2,325.3", sol: "$86.36" },
+      pendle: { tvl_base: "$8.27M", yield_avg: "18.4%" },
+      boros: { funding_rate: "0.012%", status: "LIVE" }
     },
     lattice: { s1: 0.985, s2: 0.91, s3: 1.0 }
   };
@@ -75,6 +77,20 @@ export default function Home() {
                     <div className="flex justify-between"><span>SOL/USD</span><span className="text-white">{telemetry.venues.hyperliquid.sol}</span></div>
                   </div>
                 </div>
+                <div className="space-y-4">
+                  <h3 className="text-[10px] opacity-40 uppercase tracking-widest">Pendle Finance (Base)</h3>
+                  <div className="space-y-2 text-xs">
+                    <div className="flex justify-between"><span>TVL</span><span className="text-white">{telemetry.venues.pendle.tvl_base}</span></div>
+                    <div className="flex justify-between"><span>AVG_YIELD</span><span className="text-white">{telemetry.venues.pendle.yield_avg}</span></div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <h3 className="text-[10px] opacity-40 uppercase tracking-widest">Boros Protocol</h3>
+                  <div className="space-y-2 text-xs">
+                    <div className="flex justify-between"><span>IMPLIED_FUNDING</span><span className="text-white">{telemetry.venues.boros.funding_rate}</span></div>
+                    <div className="flex justify-between"><span>STATUS</span><span className="text-[#00ff41]">{telemetry.venues.boros.status}</span></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -86,24 +102,24 @@ export default function Home() {
                 <h3 className="text-[10px] font-bold mb-8 opacity-40 uppercase tracking-[0.3em]">Live Intelligence Feed</h3>
                 <div className="space-y-6 text-[10px] font-light tracking-wider">
                   <div className="flex gap-4">
-                    <span className="opacity-30">[13:17:00]</span>
-                    <span className="text-[#00ff41]">SIM: Specialist simulation complete.</span>
+                    <span className="opacity-30">[13:25:00]</span>
+                    <span className="text-[#00ff41]">SYNC: Pendle Base TVL anchored at $8.27M.</span>
                   </div>
                   <div className="flex gap-4">
-                    <span className="opacity-30">[13:17:05]</span>
-                    <span className="text-white/60">Lattice: Weights mutated for volatility.</span>
+                    <span className="opacity-30">[13:25:05]</span>
+                    <span className="text-white/60">FEED: Boros funding rates streaming live.</span>
                   </div>
                   <div className="flex gap-4">
-                    <span className="opacity-30">[13:17:10]</span>
+                    <span className="opacity-30">[13:25:10]</span>
                     <span className="text-[#00ff41]">ACC: Prediction accuracy at 94.91%.</span>
                   </div>
                   <div className="flex gap-4">
-                    <span className="opacity-30">[13:17:15]</span>
-                    <span className="text-white/60">Sync: Avantis & Hyperliquid prices aligned.</span>
+                    <span className="opacity-30">[13:25:15]</span>
+                    <span className="text-white/60">Lattice: Swarm weights stable.</span>
                   </div>
                   <div className="flex gap-4">
-                    <span className="opacity-30">[13:17:20]</span>
-                    <span className="text-[#00ff41]/70">Sovereign OS v4.0: Peak efficiency.</span>
+                    <span className="opacity-30">[13:25:20]</span>
+                    <span className="text-[#00ff41]/70">Sovereign OS v4.0: Feeds integrated.</span>
                   </div>
                 </div>
               </div>
