@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "server": "node src/x402-server.js"
   },
   "dependencies": {
     "react": "^18",
@@ -15,7 +16,12 @@
     "framer-motion": "^11.0.3",
     "lucide-react": "^0.330.0",
     "clsx": "^2.1.0",
-    "tailwind-merge": "^2.2.1"
+    "tailwind-merge": "^2.2.1",
+    "express": "^4.18.2",
+    "@x402/express": "latest",
+    "@x402/core": "latest",
+    "@x402/evm": "latest",
+    "@x402/extensions": "latest"
   },
   "devDependencies": {
     "typescript": "^5",
