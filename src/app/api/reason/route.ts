@@ -8,12 +8,16 @@ const server = new x402ResourceServer(facilitator)
   .register("eip155:8453", new ExactEvmScheme());
 
 const handler = async (req: NextRequest) => {
-  const { query } = await req.json();
-  return NextResponse.json({ 
-    reasoning: `TheMind-v1 analysis for: ${query}`,
-    confidence: 0.99,
-    sources: ["graph-mind-v1"]
-  });
+  try {
+    const { query } = await req.json();
+    return NextResponse.json({ 
+      reasoning: `TheMind-v1 analysis for: ${query}`,
+      confidence: 0.99,
+      sources: ["graph-mind-v1"]
+    });
+  } catch (e) {
+    return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+  }
 };
 
 export const POST = withX402(
