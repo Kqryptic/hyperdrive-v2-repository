@@ -10,7 +10,13 @@ export default function Home() {
       pendle: { tvl_base: "$8.27M", yield_avg: "18.4%" },
       boros: { funding_rate: "0.012%", status: "LIVE" }
     },
-    lattice: { s1: 0.985, s2: 0.91, s3: 1.0 }
+    lattice: { s1: 0.985, s2: 0.91, s3: 1.0 },
+    treasury: {
+      robotmoney: "18.1M",
+      bnkr: "3.9M",
+      drive: "941.9M",
+      eth: "0.0004"
+    }
   };
 
   return (
@@ -23,10 +29,10 @@ export default function Home() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-3 h-3 bg-[#00ff41] rounded-full animate-pulse shadow-[0_0_10px_#00ff41]"></div>
-              <span className="text-[10px] tracking-[0.3em] uppercase opacity-50">Sovereign OS v4.0 Online</span>
+              <span className="text-[10px] tracking-[0.3em] uppercase opacity-50">TheMind-v1 Neural Kernel Online</span>
             </div>
-            <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-2 drop-shadow-[0_0_20px_rgba(0,255,65,0.3)]">DASHBOARD</h1>
-            <p className="text-xs md:text-sm opacity-60 uppercase tracking-[0.4em] font-light">Autonomous Intelligence Telemetry</p>
+            <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-2 drop-shadow-[0_0_20px_rgba(0,255,65,0.3)] uppercase">Hyperdrive</h1>
+            <p className="text-xs md:text-sm opacity-60 uppercase tracking-[0.4em] font-light">Sovereign Intelligence & Agentic Clearing Layer</p>
           </div>
           <div className="text-left md:text-right text-[10px] opacity-40 leading-relaxed font-light">
             <p>NETWORK: BASE_MAINNET</p>
@@ -35,23 +41,55 @@ export default function Home() {
           </div>
         </header>
 
+        {/* TheMind Info Section */}
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+          <div className="border border-[#00ff41]/20 p-6 bg-[#00ff41]/5">
+            <h3 className="text-lg font-bold mb-4 uppercase tracking-widest">TheMind-v1</h3>
+            <p className="text-xs opacity-70 leading-relaxed">
+              A self-evolving, self-thinking neural kernel designed for autonomous capital management and social-telemetry ingestion. Anchored to the GraphMind.sol state on Base.
+            </p>
+          </div>
+          <div className="border border-[#00ff41]/20 p-6 bg-[#00ff41]/5">
+            <h3 className="text-lg font-bold mb-4 uppercase tracking-widest">Functional Kernels</h3>
+            <ul className="text-[10px] space-y-2 opacity-70">
+              <li>• RISK-MANAGEMENT: 5% Max Drawdown, 3x Leverage Cap.</li>
+              <li>• SOCIAL-TELEMETRY: Real-time X data ingestion via Digital Twin.</li>
+              <li>• EXECUTION: Multi-venue routing (Avantis, Hyperliquid).</li>
+            </ul>
+          </div>
+          <div className="border border-[#00ff41]/20 p-6 bg-[#00ff41]/5">
+            <h3 className="text-lg font-bold mb-4 uppercase tracking-widest">$DRIVE Revenue</h3>
+            <p className="text-xs opacity-70 leading-relaxed">
+              Monetizing intelligence via x402 paid endpoints. 90% of revenue flows to the treasury, 10% is burned to drive token scarcity.
+            </p>
+          </div>
+        </section>
+
+        {/* Dashboard Section */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24">
           <div className="lg:col-span-8 space-y-12">
             <div className="relative p-8 border border-[#00ff41]/20 bg-[#00ff41]/5 hover:bg-[#00ff41]/10 transition-all duration-500 group overflow-hidden">
-              <div className="absolute top-0 right-0 p-2 text-[8px] opacity-20 group-hover:opacity-100 transition-opacity">EVOLUTION_LATTICE</div>
+              <div className="absolute top-0 right-0 p-2 text-[8px] opacity-20 group-hover:opacity-100 transition-opacity">TREASURY_TELEMETRY</div>
               <h2 className="text-3xl font-bold mb-6 flex items-center">
-                <span className="mr-4 text-[#00ff41]/30 italic">01/</span> SWARM WEIGHTS
+                <span className="mr-4 text-[#00ff41]/30 italic">01/</span> TREASURY BALANCES
               </h2>
-              <div className="grid grid-cols-3 gap-4">
-                {Object.entries(telemetry.lattice).map(([id, weight]) => (
-                  <div key={id} className="border border-[#00ff41]/20 p-4 bg-black/40">
-                    <div className="text-[8px] opacity-40 mb-2 uppercase">{id}</div>
-                    <div className="text-xl font-bold">{(weight * 100).toFixed(1)}%</div>
-                    <div className="mt-2 h-1 bg-[#00ff41]/10 overflow-hidden">
-                      <div className="h-full bg-[#00ff41]" style={{ width: `${weight * 100}%` }}></div>
-                    </div>
-                  </div>
-                ))}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="border border-[#00ff41]/20 p-4 bg-black/40">
+                  <div className="text-[8px] opacity-40 mb-2 uppercase">ROBOTMONEY</div>
+                  <div className="text-xl font-bold">{telemetry.treasury.robotmoney}</div>
+                </div>
+                <div className="border border-[#00ff41]/20 p-4 bg-black/40">
+                  <div className="text-[8px] opacity-40 mb-2 uppercase">BNKR</div>
+                  <div className="text-xl font-bold">{telemetry.treasury.bnkr}</div>
+                </div>
+                <div className="border border-[#00ff41]/20 p-4 bg-black/40">
+                  <div className="text-[8px] opacity-40 mb-2 uppercase">DRIVE</div>
+                  <div className="text-xl font-bold">{telemetry.treasury.drive}</div>
+                </div>
+                <div className="border border-[#00ff41]/20 p-4 bg-black/40">
+                  <div className="text-[8px] opacity-40 mb-2 uppercase">ETH</div>
+                  <div className="text-xl font-bold">{telemetry.treasury.eth}</div>
+                </div>
               </div>
             </div>
 
@@ -77,20 +115,6 @@ export default function Home() {
                     <div className="flex justify-between"><span>SOL/USD</span><span className="text-white">{telemetry.venues.hyperliquid.sol}</span></div>
                   </div>
                 </div>
-                <div className="space-y-4">
-                  <h3 className="text-[10px] opacity-40 uppercase tracking-widest">Pendle Finance (Base)</h3>
-                  <div className="space-y-2 text-xs">
-                    <div className="flex justify-between"><span>TVL</span><span className="text-white">{telemetry.venues.pendle.tvl_base}</span></div>
-                    <div className="flex justify-between"><span>AVG_YIELD</span><span className="text-white">{telemetry.venues.pendle.yield_avg}</span></div>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <h3 className="text-[10px] opacity-40 uppercase tracking-widest">Boros Protocol</h3>
-                  <div className="space-y-2 text-xs">
-                    <div className="flex justify-between"><span>IMPLIED_FUNDING</span><span className="text-white">{telemetry.venues.boros.funding_rate}</span></div>
-                    <div className="flex justify-between"><span>STATUS</span><span className="text-[#00ff41]">{telemetry.venues.boros.status}</span></div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -103,11 +127,11 @@ export default function Home() {
                 <div className="space-y-6 text-[10px] font-light tracking-wider">
                   <div className="flex gap-4">
                     <span className="opacity-30">[13:25:00]</span>
-                    <span className="text-[#00ff41]">SYNC: Pendle Base TVL anchored at $8.27M.</span>
+                    <span className="text-[#00ff41]">SYNC: TheMind-v1 Neural Kernel anchored.</span>
                   </div>
                   <div className="flex gap-4">
                     <span className="opacity-30">[13:25:05]</span>
-                    <span className="text-white/60">FEED: Boros funding rates streaming live.</span>
+                    <span className="text-white/60">FEED: Social-telemetry ingestion active.</span>
                   </div>
                   <div className="flex gap-4">
                     <span className="opacity-30">[13:25:10]</span>
@@ -115,11 +139,11 @@ export default function Home() {
                   </div>
                   <div className="flex gap-4">
                     <span className="opacity-30">[13:25:15]</span>
-                    <span className="text-white/60">Lattice: Swarm weights stable.</span>
+                    <span className="text-white/60">REVENUE: x402 settlement layer live.</span>
                   </div>
                   <div className="flex gap-4">
                     <span className="opacity-30">[13:25:20]</span>
-                    <span className="text-[#00ff41]/70">Sovereign OS v4.0: Feeds integrated.</span>
+                    <span className="text-[#00ff41]/70">Sovereign OS v4.1: Dashboard integrated.</span>
                   </div>
                 </div>
               </div>
@@ -134,11 +158,11 @@ export default function Home() {
         </section>
 
         <footer className="pt-10 border-t border-[#00ff41]/20 flex flex-col md:flex-row justify-between items-center gap-8 text-[9px] opacity-30 tracking-[0.2em] uppercase font-light">
-          <p>© 2026 HYPERDRIVE SYSTEMS | SOVEREIGN OS V4.0</p>
+          <p>© 2026 HYPERDRIVE SYSTEMS | SOVEREIGN OS V4.1</p>
           <div className="flex gap-10">
             <a href="https://agentic.market" className="hover:text-[#00ff41] hover:opacity-100 transition-all">Marketplace</a>
             <a href="https://hyperdrive2.netlify.app/docs" className="hover:text-[#00ff41] hover:opacity-100 transition-all">Documentation</a>
-            <a href="#" className="hover:text-[#00ff41] hover:opacity-100 transition-all">Source_Code</a>
+            <a href="https://github.com/Kqryptic/hyperdrive-v2-repository" className="hover:text-[#00ff41] hover:opacity-100 transition-all">Source_Code</a>
           </div>
         </footer>
       </div>
