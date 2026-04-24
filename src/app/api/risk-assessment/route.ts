@@ -8,13 +8,17 @@ const server = new x402ResourceServer(facilitator)
   .register("eip155:8453", new ExactEvmScheme());
 
 const handler = async (req: NextRequest) => {
-  const { tokenAddress } = await req.json();
-  return NextResponse.json({ 
-    verdict: "verified",
-    score: 10,
-    flags: [],
-    address: tokenAddress
-  });
+  try {
+    const { tokenAddress } = await req.json();
+    return NextResponse.json({ 
+      verdict: "verified",
+      score: 10,
+      flags: [],
+      address: tokenAddress
+    });
+  } catch (e) {
+    return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+  }
 };
 
 export const POST = withX402(
