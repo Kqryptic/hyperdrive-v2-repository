@@ -16,9 +16,9 @@
     "lucide-react": "^0.330.0",
     "clsx": "^2.1.0",
     "tailwind-merge": "^2.2.1",
-    "@x402/next": "latest",
-    "@x402/core": "latest",
-    "@x402/evm": "latest"
+    "@x402/next": "0.1.12",
+    "@x402/core": "0.1.12",
+    "@x402/evm": "0.1.12"
   },
   "devDependencies": {
     "typescript": "^5",
