@@ -160,6 +160,7 @@ export default function Home() {
         <footer className="pt-10 border-t border-[#00ff41]/20 flex flex-col md:flex-row justify-between items-center gap-8 text-[9px] opacity-30 tracking-[0.2em] uppercase font-light">
           <p>© 2026 HYPERDRIVE SYSTEMS | SOVEREIGN OS V4.1</p>
           <div className="flex gap-10">
+            <a href="https://x.com/hyperdrive_ai" className="hover:text-[#00ff41] hover:opacity-100 transition-all">X_Account</a>
             <a href="https://agentic.market" className="hover:text-[#00ff41] hover:opacity-100 transition-all">Marketplace</a>
             <a href="https://hyperdrive2.netlify.app/docs" className="hover:text-[#00ff41] hover:opacity-100 transition-all">Documentation</a>
             <a href="https://github.com/Kqryptic/hyperdrive-v2-repository" className="hover:text-[#00ff41] hover:opacity-100 transition-all">Source_Code</a>
