@@ -1,6 +1,6 @@
 # Hyperdrive v2.1: Bankr-Eliza Bridge
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/import?repo=https://github.com/Kqryptic/hyperdrive-v2-repository)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/new/import?repo=https%3A%2F%2Fgithub.com%2FKqryptic%2Fhyperdrive-v2-repository)
 
 Quantum-Resistant Intelligence Layer with autonomous ElizaOS v3 orchestration.
 
