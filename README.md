@@ -1,19 +1,19 @@
-# Hyperdrive v2.1
-Quantum-Resistant Intelligence Layer
+# Hyperdrive v2.1: Bankr-Eliza Bridge
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/import?repo=https://github.com/Kqryptic/hyperdrive-v2-repository)
+
+Quantum-Resistant Intelligence Layer with autonomous ElizaOS v3 orchestration.
 
 ## Tech Stack
-- **Framework**: Next.js 14 (App Router)
-- **Styling**: Tailwind CSS
-- **Intelligence**: Hyperdrive Engine v2.0
-- **Memory**: OriginTrail DKG v9 (Decentralized Knowledge Graph)
-- **Security**: Q-Shield Vault (PQC-WOTS+)
-- **State Layer**: Q-Sync v1.0 (Quantum-Native Synchronization)
+- **Framework**: ElizaOS v3 Alpha (develop branch)
+- **Execution**: Bankr Sovereign Swarm Kernel
+- **Settlement**: $BNKR (Base)
+- **Infrastructure**: Railway (Autonomous Build)
 
 ## Deployment
-Deployed on Vercel. Connected to the `Kqryptic/hyperdrive-v2-repository` main branch.
+1. Click the **Deploy on Railway** button above.
+2. Add your `BANKR_API_KEY` and `OPENAI_API_KEY` in the Railway dashboard.
+3. The bridge will automatically clone ElizaOS, inject the `plugin-bankr`, and launch the agent.
 
 ## Integration
-Hyperdrive findings are anchored as Knowledge Assets on the OriginTrail DKG. Every signal is cryptographically verifiable.
-
-### Q-Sync (v1.0)
-Implements "storing vs process" state separation inspired by quantum memory research. High-frequency agent state is cached in off-chain TEEs (storing) for sub-millisecond synchronization before on-chain settlement (process).
+This repository acts as the bridge between Eliza's social "LifeOps" and Bankr's on-chain execution. All trade intents detected by the Eliza agent are delegated to the Bankr kernel for secure, high-velocity extraction.
