@@ -1,27 +1,26 @@
-FROM node:20-slim AS base
+FROM oven/bun:latest AS base
 
-# Install dependencies only when needed
+# Install dependencies
 FROM base AS deps
 WORKDIR /app
-COPY package.json package-lock.json* ./
-RUN npm install
+COPY package.json ./
+RUN bun install
 
-# Rebuild the source code only when needed
+# Build the app
 FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-RUN npm run build
+RUN bun run build
 
-# Production image, copy all the files and run next
+# Production runner
 FROM base AS runner
 WORKDIR /app
 ENV NODE_ENV production
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
 
 EXPOSE 3000
 ENV PORT 3000
-CMD ["npm", "start"]
+CMD ["bun", "server.js"]
