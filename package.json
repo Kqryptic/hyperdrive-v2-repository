@@ -12,16 +12,16 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "next": "14.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "next": "14.2.15",
     "framer-motion": "^11.0.3",
     "lucide-react": "^0.330.0",
     "clsx": "^2.1.0",
     "tailwind-merge": "^2.2.1",
-    "@x402/next": "^2.11.0",
-    "@x402/core": "^2.11.0",
-    "@x402/evm": "^2.11.0",
+    "@x402/next": "2.11.0",
+    "@x402/core": "2.11.0",
+    "@x402/evm": "2.11.0",
     "sharp": "^0.33.2"
   },
   "devDependencies": {
@@ -32,9 +32,11 @@
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "eslint": "^8.56.0",
-    "eslint-config-next": "14.1.0"
+    "eslint-config-next": "14.2.15"
   },
   "overrides": {
-    "next": "$next"
+    "next": "14.2.15",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   }
 }
