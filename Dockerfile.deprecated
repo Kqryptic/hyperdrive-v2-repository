@@ -1,0 +1,2 @@
+# Manual Dockerfile removed to use Railway Nixpacks.
+# Railway will now auto-detect the Next.js app and deploy it using its native builder.
