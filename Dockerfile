@@ -1,21 +1,27 @@
-FROM oven/bun:latest
+FROM node:20-slim AS base
 
-# Install git and build essentials
-RUN apt-get update && apt-get install -y git build-essential python3
-
-# Clone elizaOS develop branch
-RUN git clone -b develop https://github.com/elizaOS/eliza.git /app
+# Install dependencies only when needed
+FROM base AS deps
 WORKDIR /app
+COPY package.json package-lock.json* ./
+RUN npm install
 
-# Inject plugin-bankr into the monorepo
-COPY plugin-bankr.ts /app/packages/plugin-bankr/src/index.ts
+# Rebuild the source code only when needed
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+RUN npm run build
 
-# Create package.json for the plugin
-RUN echo '{"name": "@elizaos/plugin-bankr", "version": "0.1.0", "main": "dist/index.js", "types": "dist/index.d.ts", "dependencies": { "@elizaos/core": "workspace:*" }}' > /app/packages/plugin-bankr/package.json
+# Production image, copy all the files and run next
+FROM base AS runner
+WORKDIR /app
+ENV NODE_ENV production
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
 
-# Build the project
-RUN bun install
-RUN bun run build --filter @elizaos/plugin-bankr
-
-# Start the app
-CMD ["bun", "run", "dev"]
+EXPOSE 3000
+ENV PORT 3000
+CMD ["npm", "start"]
